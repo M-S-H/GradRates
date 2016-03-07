@@ -23,3 +23,8 @@ function prepare(data, year, normalize)
 
 	return (Y, X)
 end
+
+
+function preparetest(data, year, normalize)
+	
+end

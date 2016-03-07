@@ -11,11 +11,6 @@ data = readtable("Data/Complete.csv")
 
 # Format Data
 Y, X = prepare(data, "2007", true)
-# training = 160
-# Xhat = X[training+1:end, :]
-# Yhat = Y[training+1:end, :]
-# X = X[1:training, :]
-# Y = Y[1:training, :]
 
 Yhat, Xhat = prepare(data, "2008", true)
 
