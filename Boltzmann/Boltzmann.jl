@@ -5,7 +5,7 @@ include("../lib/stats.jl")
 data = readtable("../Data/Complete.csv")
 
 # Format Data
-Y, X = prepare(data, "2007")
+Y, X = prepare(data, "2007", true)
 samples = size(X)[1]
 features = size(X)[2]
 
