@@ -68,9 +68,9 @@ t8 = Term([
 terms = [t1 t2 t3 t4 t5 t6 t7 t8];
 
 
-grad_rate = simulate(20, 100, terms, 8)
+grad_rate = simulate(20, 1, terms, 8)
 println(grad_rate)
-grad_rate = simulate(20, 100, terms, 10)
+grad_rate = simulate(20, 1, terms, 10)
 println(grad_rate)
-grad_rate = simulate(20, 100, terms, 12)
+grad_rate = simulate(20, 1, terms, 12)
 println(grad_rate)

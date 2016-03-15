@@ -18,6 +18,7 @@ function simulate(number, trials, terms, semesters)
 		# For example, if column 3 is a 1, then that indicates the student copleted course 3.
 		students = zeros(number, courses)
 
+		enrollment = []
 
 		# Run the simulation for the specified number of semesters.
 		for s=1:semesters
@@ -49,7 +50,7 @@ function simulate(number, trials, terms, semesters)
 							# Checks to make sure a student can be enrolled in the current course.
 							# A student must not have already copleted the course and must have completed
 							# the current courses prereqs and must not be enrolled in more than 6 courses
-							if (length(course.prereqs) == 0 || sum(students[i, course.prereqs]) == length(course.prereqs)) && students[i, course.id] == 0.0 && enrollment[i] <= 6
+							if (length(course.prereqs) == 0 || sum(students[i, course.prereqs]) == length(course.prereqs)) && students[i, course.id] == 0.0 && enrollment[i] < 6
 								# If requirements are met, push student id (the index of the student row)
 								# into the courses student array.
 								push!(course.students, i)
@@ -103,8 +104,6 @@ function simulate(number, trials, terms, semesters)
 
 		# Push the ratio of graduated students to all students into the rates array.
 		push!(rates, grad/number)
-
-		# println(students)
 	end
 
 	# Return the average of all graduation rates.
